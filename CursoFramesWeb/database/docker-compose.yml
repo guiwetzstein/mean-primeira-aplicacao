@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:4
+    container_name: mean_primeira_app_db
+    restart: unless-stopped
+    command: --bind_ip 0.0.0.0 --smallfiles
+    volumes:
+      - ./db:/data/db
+    ports:
+      - 27017:27017

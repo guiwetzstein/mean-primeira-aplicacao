@@ -1,0 +1,12 @@
+const express = require('express');
+const server = express();
+
+server.route('/clientes')
+    .get((req, res) => res.send('Lista de Clientes'))
+    .post((req, res) => res.send('Novo cliente'))
+    .put((req, res) => res.send('Alterar cliente'))
+    .delete((req, res) => res.send('Remove cliente'));
+
+server.listen(3000, function () {
+    console.log('Executando...')
+});
